@@ -1,3 +1,4 @@
+pfetch
 abbr -a -g pr cd /run/media/vishal/DATA/projects
 
 set PATH ~/.config/polybar/scripts $PATH
