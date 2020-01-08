@@ -1,0 +1,175 @@
+2020-01-05 17:13:59,780 DEBUG    root            Loaded Command Group: [u'gcloud', u'app']
+2020-01-05 17:13:59,879 DEBUG    root            Loaded Command Group: [u'gcloud', u'app', u'deploy']
+2020-01-05 17:13:59,882 DEBUG    root            Running [gcloud.app.deploy] with arguments: []
+2020-01-05 17:14:01,776 DEBUG    root            Loading runtimes experiment config from [gs://runtime-builders/experiments.yaml]
+2020-01-05 17:14:01,841 INFO     root            Reading [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7ff60ec44a10>]
+2020-01-05 17:14:02,715 DEBUG    root            
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 300, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7ff60ec44a10>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-01-05 17:14:02,716 DEBUG    root            Experiment config file could not be read. Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7ff60ec44a10>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/surface/app/deploy.py", line 126, in _ServerSideExperimentEnabled
+    runtimes_builder_root)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 524, in LoadFromURI
+    .format(uri, e))
+ExperimentsError: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7ff60ec44a10>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-01-05 17:14:03,071 DEBUG    root            API endpoint: [https://appengine.googleapis.com/], API version: [v1]
+2020-01-05 17:14:05,275 INFO     ___FILE_ONLY___ Services to deploy:
+
+
+2020-01-05 17:14:05,275 INFO     ___FILE_ONLY___ descriptor:      [/run/media/vishal/DATA/projects/adrs/adrs-rest/app.yaml]
+source:          [/run/media/vishal/DATA/projects/adrs/adrs-rest]
+target project:  [adrs-rest-api]
+target service:  [default]
+target version:  [20200105t171405]
+target url:      [https://adrs-rest-api.appspot.com]
+
+
+
+2020-01-05 17:14:06,985 DEBUG    root            No bucket specified, retrieving default bucket.
+2020-01-05 17:14:07,004 DEBUG    root            Using bucket [gs://staging.adrs-rest-api.appspot.com].
+2020-01-05 17:14:07,832 INFO     ___FILE_ONLY___ Beginning deployment of service [default]...
+
+2020-01-05 17:14:07,834 INFO     root            Using ignore file at [/run/media/vishal/DATA/projects/adrs/adrs-rest/.gcloudignore].
+2020-01-05 17:14:07,835 DEBUG    root            Skipping file [.gcloudignore]
+2020-01-05 17:14:07,836 DEBUG    root            Skipping file [__pycache__]
+2020-01-05 17:14:07,838 DEBUG    root            Skipping file [bin/__pycache__]
+2020-01-05 17:14:08,199 DEBUG    root            Could not call git with args ('config', '--get-regexp', 'remote\\.(.*)\\.url'): Command '['git', 'config', '--get-regexp', 'remote\\.(.*)\\.url']' returned non-zero exit status 1
+2020-01-05 17:14:08,199 INFO     root            Could not find any remote repositories associated with [/run/media/vishal/DATA/projects/adrs/adrs-rest]. Cloud diagnostic tools may not be able to display the correct source code for this deployment.
+2020-01-05 17:14:09,104 DEBUG    root            Skipping upload of [bin/defectmarkingcall.py]
+2020-01-05 17:14:09,104 DEBUG    root            Skipping upload of [bin/penetempold/test_cr.jpg]
+2020-01-05 17:14:09,105 DEBUG    root            Skipping upload of [bin/template/PL 21802 0-1_cr.jpg]
+2020-01-05 17:14:09,105 DEBUG    root            Skipping upload of [bin/penetempold/IGCAR SS 15NB 15,16 X_cr.jpg]
+2020-01-05 17:14:09,106 DEBUG    root            Skipping upload of [bin/template/s0.jpg]
+2020-01-05 17:14:09,106 DEBUG    root            Skipping upload of [bin/template/g.jpg]
+2020-01-05 17:14:09,106 DEBUG    root            Skipping upload of [bin/penetempold/MTD CWP1 A-B_cr.jpg]
+2020-01-05 17:14:09,107 DEBUG    root            Skipping upload of [bin/template/r1.jpg]
+2020-01-05 17:14:09,107 DEBUG    root            Skipping upload of [bin/penetempold/P10QADR462-11_cr_cr.jpg]
+2020-01-05 17:14:09,108 DEBUG    root            Skipping upload of [bin/penetempold/MMG RSS WP2 A-B_cr_cr.jpg]
+2020-01-05 17:14:09,108 DEBUG    root            Skipping upload of [bin/template/5l.jpg]
+2020-01-05 17:14:09,108 DEBUG    root            Skipping upload of [bin/template/5.jpg]
+2020-01-05 17:14:09,109 DEBUG    root            Skipping upload of [bin/tmp/output_graph.pb]
+2020-01-05 17:14:09,109 DEBUG    root            Skipping upload of [bin/penetempold/FBTR TO CWMF C021 A-B_cr_cr.jpg]
+2020-01-05 17:14:09,110 DEBUG    root            Skipping upload of [bin/penetempold/igcvp103715deg_cr.jpg]
+2020-01-05 17:14:09,110 DEBUG    root            Skipping upload of [bin/template/S10 QAD R428 1_cr.jpg]
+2020-01-05 17:14:09,110 DEBUG    root            Skipping upload of [bin/penetempold/P6QADR298-11_cr.jpg]
+2020-01-05 17:14:09,111 DEBUG    root            Skipping upload of [bin/penetempold/igcvp838A-B_cr.jpg]
+2020-01-05 17:14:09,111 DEBUG    root            Skipping upload of [requirements.txt]
+2020-01-05 17:14:09,111 DEBUG    root            Skipping upload of [bin/defectanalyzernew.py]
+2020-01-05 17:14:09,112 DEBUG    root            Skipping upload of [bin/template/y.jpg]
+2020-01-05 17:14:09,112 DEBUG    root            Skipping upload of [bin/template/x.jpg]
+2020-01-05 17:14:09,112 DEBUG    root            Skipping upload of [bin/template/b.jpg]
+2020-01-05 17:14:09,113 DEBUG    root            Skipping upload of [bin/template/15.jpg]
+2020-01-05 17:14:09,113 DEBUG    root            Skipping upload of [bin/tmp1/output_graph.pb]
+2020-01-05 17:14:09,113 DEBUG    root            Skipping upload of [bin/penetempold/QAD R658 13_cr.jpg]
+2020-01-05 17:14:09,114 DEBUG    root            Skipping upload of [bin/penetempold/,IGCAR SS 50NB 20 Y_cr_cr.jpg]
+2020-01-05 17:14:09,114 DEBUG    root            Skipping upload of [bin/template/n.jpg]
+2020-01-05 17:14:09,114 DEBUG    root            Skipping upload of [bin/template/1l.jpg]
+2020-01-05 17:14:09,115 DEBUG    root            Skipping upload of [bin/template/p.jpg]
+2020-01-05 17:14:09,115 DEBUG    root            Skipping upload of [bin/template/r.jpg]
+2020-01-05 17:14:09,115 DEBUG    root            Skipping upload of [bin/temp.png]
+2020-01-05 17:14:09,116 DEBUG    root            Skipping upload of [bin/app.py]
+2020-01-05 17:14:09,116 DEBUG    root            Skipping upload of [bin/template/a.jpg]
+2020-01-05 17:14:09,116 DEBUG    root            Skipping upload of [bin/penetempold/P16QADR272-12_cr_cr.jpg]
+2020-01-05 17:14:09,117 DEBUG    root            Skipping upload of [bin/penetempold/igcvp1037_cr.jpg]
+2020-01-05 17:14:09,117 DEBUG    root            Skipping upload of [bin/penetempold/FBTR TO CWMF C020 X_cr.jpg]
+2020-01-05 17:14:09,117 DEBUG    root            Skipping upload of [bin/penetempold/MTD CWP_cr.jpg]
+2020-01-05 17:14:09,118 DEBUG    root            Skipping upload of [bin/template/xl.jpg]
+2020-01-05 17:14:09,118 DEBUG    root            Skipping upload of [bin/template/i.jpg]
+2020-01-05 17:14:09,118 DEBUG    root            Skipping upload of [bin/penetempold/DSPWP4 A-B_cr.jpg]
+2020-01-05 17:14:09,119 DEBUG    root            Skipping upload of [bin/template/0l.jpg]
+2020-01-05 17:14:09,119 DEBUG    root            Skipping upload of [bin/penevalfunc.py]
+2020-01-05 17:14:09,119 DEBUG    root            Skipping upload of [bin/tmp/output_labels.txt]
+2020-01-05 17:14:09,119 DEBUG    root            Skipping upload of [bin/penetempold/,IGCAR SS 25NB 17,18 X_e_cr.jpg]
+2020-01-05 17:14:09,120 DEBUG    root            Skipping upload of [fault_detector.py]
+2020-01-05 17:14:09,120 DEBUG    root            Skipping upload of [bin/template/6.jpg]
+2020-01-05 17:14:09,120 DEBUG    root            Skipping upload of [bin/penetempold/,IGCAR CS 15NB 03,04 X_cr_cr.jpg]
+2020-01-05 17:14:09,121 DEBUG    root            Skipping upload of [bin/penetempold/MTD CWP-2 A-B_cr.jpg]
+2020-01-05 17:14:09,121 DEBUG    root            Skipping upload of [bin/template/ro.jpg]
+2020-01-05 17:14:09,121 DEBUG    root            Skipping upload of [bin/penetempold/P8QADR462-11_cr.jpg]
+2020-01-05 17:14:09,122 DEBUG    root            Skipping upload of [bin/penetempold/,IGCAR SS 50NB 19 X_cr.jpg]
+2020-01-05 17:14:09,122 DEBUG    root            Skipping upload of [bin/penetempold/MMG RSS WP1 A-B_cr.jpg]
+2020-01-05 17:14:09,122 DEBUG    root            Skipping upload of [bin/penetempold/sample E_cr_cr.jpg]
+2020-01-05 17:14:09,122 DEBUG    root            Skipping upload of [main.py]
+2020-01-05 17:14:09,123 DEBUG    root            Skipping upload of [bin/template/c.jpg]
+2020-01-05 17:14:09,123 DEBUG    root            Skipping upload of [bin/remtxtfunc.py]
+2020-01-05 17:14:09,123 DEBUG    root            Skipping upload of [bin/penetempold/ss 21807,21808_cr.jpg]
+2020-01-05 17:14:09,124 DEBUG    root            Skipping upload of [bin/penetempold/NCB UT 12  04_cr_cr_cr.jpg]
+2020-01-05 17:14:09,124 DEBUG    root            Skipping upload of [bin/tmp1/output_labels.txt]
+2020-01-05 17:14:09,124 DEBUG    root            Skipping upload of [bin/penetempold/P1 QADR257 1_cr.jpg]
+2020-01-05 17:14:09,124 DEBUG    root            Skipping upload of [bin/template/s.jpg]
+2020-01-05 17:14:09,125 DEBUG    root            Skipping upload of [bin/penetempold/IGCAR 25 NB CS5,6SS17,18,-X._cr.jpg]
+2020-01-05 17:14:09,125 DEBUG    root            Skipping upload of [bin/penetempold/QAD WJ 50NB Y_cr.jpg]
+2020-01-05 17:14:09,125 DEBUG    root            Skipping upload of [bin/penetempold/IFSB CO35 R3 X_cr.jpg]
+2020-01-05 17:14:09,125 INFO     root            Incremental upload skipped 100.0% of data
+2020-01-05 17:14:09,126 DEBUG    root            Uploading 1 file to Google Cloud Storage
+2020-01-05 17:14:09,126 DEBUG    root            Using [16] threads
+2020-01-05 17:14:09,126 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2020-01-05 17:14:09,127 INFO     ___FILE_ONLY___ ╠═ Uploading 1 file to Google Cloud Storage                 ═╣
+
+2020-01-05 17:14:09,127 INFO     ___FILE_ONLY___ ╚
+2020-01-05 17:14:09,141 INFO     root            Uploading [/run/media/vishal/DATA/projects/adrs/adrs-rest/app.yaml] to [staging.adrs-rest-api.appspot.com/ab8bc61dfe6d3cad481df3bab4419c927f915274]
+2020-01-05 17:14:09,679 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2020-01-05 17:14:09,680 INFO     ___FILE_ONLY___ ╝
+
+2020-01-05 17:14:09,686 INFO     ___FILE_ONLY___ File upload done.
+
+2020-01-05 17:14:09,687 INFO     root            Manifest: [{u'bin/defectmarkingcall.py': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/81cf8726094ece0003232e990f89e791249f0852', u'sha1Sum': '81cf8726094ece0003232e990f89e791249f0852'}, u'bin/penetempold/test_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/1753f7260c9388a215a42d029c44c7ee6b4bfb06', u'sha1Sum': '1753f7260c9388a215a42d029c44c7ee6b4bfb06'}, u'bin/template/PL 21802 0-1_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/c7eed327bae8c7ea9862a8e54abbf305d9c78360', u'sha1Sum': 'c7eed327bae8c7ea9862a8e54abbf305d9c78360'}, u'bin/penetempold/IGCAR SS 15NB 15,16 X_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/04c2761251ed4b0685b6cb0affdc06d4acb2d24f', u'sha1Sum': '04c2761251ed4b0685b6cb0affdc06d4acb2d24f'}, u'bin/template/s0.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/d37f3752b94365c4061ef3753ff512bcb0cc2dc3', u'sha1Sum': 'd37f3752b94365c4061ef3753ff512bcb0cc2dc3'}, u'bin/template/g.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/fd3d45df2b87c87a3544a93d187ed40b6b2738cf', u'sha1Sum': 'fd3d45df2b87c87a3544a93d187ed40b6b2738cf'}, u'bin/penetempold/MTD CWP1 A-B_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/efe7289f15dfacc1ae26e7cd231c97c24606ea63', u'sha1Sum': 'efe7289f15dfacc1ae26e7cd231c97c24606ea63'}, u'bin/template/r1.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/278adb7362904021f8ee5e4aeab84bd4c3f41d49', u'sha1Sum': '278adb7362904021f8ee5e4aeab84bd4c3f41d49'}, u'bin/penetempold/P10QADR462-11_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/4731f96c73af0c07ff552b1817ae8b84a31d0ad7', u'sha1Sum': '4731f96c73af0c07ff552b1817ae8b84a31d0ad7'}, u'bin/penetempold/MMG RSS WP2 A-B_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/55607d6a8e3a9959cfd3f09aef5f4c80e61cfde5', u'sha1Sum': '55607d6a8e3a9959cfd3f09aef5f4c80e61cfde5'}, u'bin/template/5l.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/6632da2f4bd06ae768a6d99ff1fae379770ad285', u'sha1Sum': '6632da2f4bd06ae768a6d99ff1fae379770ad285'}, u'bin/template/5.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/63cec38993cfd68cbff012933970270f4a23a6a4', u'sha1Sum': '63cec38993cfd68cbff012933970270f4a23a6a4'}, u'app.yaml': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/ab8bc61dfe6d3cad481df3bab4419c927f915274', u'sha1Sum': 'ab8bc61dfe6d3cad481df3bab4419c927f915274'}, u'bin/tmp/output_graph.pb': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/ebdec63fc39a252ae582618d5b839a1499286815', u'sha1Sum': 'ebdec63fc39a252ae582618d5b839a1499286815'}, u'bin/penetempold/FBTR TO CWMF C021 A-B_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/d11151d873f5ed55616dcab08a35e259fba35158', u'sha1Sum': 'd11151d873f5ed55616dcab08a35e259fba35158'}, u'bin/penetempold/igcvp103715deg_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/efa4be288c78fe9ecd2b453794125460986a41d9', u'sha1Sum': 'efa4be288c78fe9ecd2b453794125460986a41d9'}, u'bin/template/S10 QAD R428 1_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/aaa1677d844802e3e4d703884b4a2fc037c83ba5', u'sha1Sum': 'aaa1677d844802e3e4d703884b4a2fc037c83ba5'}, u'bin/penetempold/P6QADR298-11_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/b400275e481d1b8ab1213f273471718c862a939d', u'sha1Sum': 'b400275e481d1b8ab1213f273471718c862a939d'}, u'bin/penetempold/igcvp838A-B_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/305d3ba8d35fe802d0bc918c8c1d890c7dc6ea2b', u'sha1Sum': '305d3ba8d35fe802d0bc918c8c1d890c7dc6ea2b'}, u'requirements.txt': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/63b1f15abbd67d8f7023cec021cad8c71d03db66', u'sha1Sum': '63b1f15abbd67d8f7023cec021cad8c71d03db66'}, u'bin/defectanalyzernew.py': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/4a268430ffb8e6e8c7916f926af5ecf1275ec62c', u'sha1Sum': '4a268430ffb8e6e8c7916f926af5ecf1275ec62c'}, u'bin/template/y.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/30b3dcf8813819f0db6cedaded1d5e0d3d5ecbdc', u'sha1Sum': '30b3dcf8813819f0db6cedaded1d5e0d3d5ecbdc'}, u'bin/template/x.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/61ef76105b88523221a0f771a5fb7e759dc4325a', u'sha1Sum': '61ef76105b88523221a0f771a5fb7e759dc4325a'}, u'bin/template/b.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/e6fbe7cceb30a728c521b12265ec733c295d1244', u'sha1Sum': 'e6fbe7cceb30a728c521b12265ec733c295d1244'}, u'bin/template/15.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/991698a2a4334a42fa5adde7b4c1d23c0fb9026b', u'sha1Sum': '991698a2a4334a42fa5adde7b4c1d23c0fb9026b'}, u'bin/tmp1/output_graph.pb': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/e3cbb8718263b9aa266f5094b96d4b1defc14c54', u'sha1Sum': 'e3cbb8718263b9aa266f5094b96d4b1defc14c54'}, u'bin/penetempold/QAD R658 13_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/bd6ab46ef342be48f36db0d8c8bf8cbbf4936958', u'sha1Sum': 'bd6ab46ef342be48f36db0d8c8bf8cbbf4936958'}, u'bin/penetempold/,IGCAR SS 50NB 20 Y_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/ad337f6934fcf3bfdb957beb6697c925e1c5213a', u'sha1Sum': 'ad337f6934fcf3bfdb957beb6697c925e1c5213a'}, u'bin/template/n.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/b0339c9e361fe151b367dc46d89382f4a5178724', u'sha1Sum': 'b0339c9e361fe151b367dc46d89382f4a5178724'}, u'bin/template/1l.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/2b0f5389dbe7b6128eae80267461a1e632578f3f', u'sha1Sum': '2b0f5389dbe7b6128eae80267461a1e632578f3f'}, u'bin/template/p.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/7522f83ddfe8ba414abb11dc8a8b6ea48a8e06ba', u'sha1Sum': '7522f83ddfe8ba414abb11dc8a8b6ea48a8e06ba'}, u'bin/template/r.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/a22837c568f87861f8b87a6587511d871ff7c2bd', u'sha1Sum': 'a22837c568f87861f8b87a6587511d871ff7c2bd'}, u'bin/temp.png': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/1025f97a11ef0f7a6b2827fc7514154c03cefd31', u'sha1Sum': '1025f97a11ef0f7a6b2827fc7514154c03cefd31'}, u'bin/app.py': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/13c601d2bc5e1869812ecbe9c9679c77b768293f', u'sha1Sum': '13c601d2bc5e1869812ecbe9c9679c77b768293f'}, u'bin/template/a.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/66cb5a37bbc67fd7639c2d4c16cae82e811edf59', u'sha1Sum': '66cb5a37bbc67fd7639c2d4c16cae82e811edf59'}, u'bin/penetempold/P16QADR272-12_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/a427dac516fa529eda827da2c64d17456e365a82', u'sha1Sum': 'a427dac516fa529eda827da2c64d17456e365a82'}, u'bin/penetempold/igcvp1037_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/37b81dc4c75035df0c126fe598828b52c2fb7abf', u'sha1Sum': '37b81dc4c75035df0c126fe598828b52c2fb7abf'}, u'bin/penetempold/FBTR TO CWMF C020 X_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/94df015b3ba7fe7d16d9d0ec4c963edfeffb8bdf', u'sha1Sum': '94df015b3ba7fe7d16d9d0ec4c963edfeffb8bdf'}, u'bin/penetempold/MTD CWP_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/89597251a279007adbb09fb9cf6b3b8dd4bf68ef', u'sha1Sum': '89597251a279007adbb09fb9cf6b3b8dd4bf68ef'}, u'bin/template/xl.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/e0c1a004e433750b9279dcd736c0df0e03d581be', u'sha1Sum': 'e0c1a004e433750b9279dcd736c0df0e03d581be'}, u'bin/template/i.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/cb995497bbb26f577b4563235203499ae020fe74', u'sha1Sum': 'cb995497bbb26f577b4563235203499ae020fe74'}, u'bin/penetempold/DSPWP4 A-B_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/b91c90290a409aa5aebceaf499472a1e20571254', u'sha1Sum': 'b91c90290a409aa5aebceaf499472a1e20571254'}, u'bin/template/0l.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/4a2ffd0289915cd6914f46406981761072c99f92', u'sha1Sum': '4a2ffd0289915cd6914f46406981761072c99f92'}, u'bin/penevalfunc.py': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/bab376f38d8597cef959252334d05c3dc7cf4980', u'sha1Sum': 'bab376f38d8597cef959252334d05c3dc7cf4980'}, u'bin/tmp/output_labels.txt': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/c40756457ca6940ada94e26c87913c84ce19b257', u'sha1Sum': 'c40756457ca6940ada94e26c87913c84ce19b257'}, u'bin/penetempold/,IGCAR SS 25NB 17,18 X_e_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/7df94741b610c79a43ad2bf76a17f6ff10622de9', u'sha1Sum': '7df94741b610c79a43ad2bf76a17f6ff10622de9'}, u'fault_detector.py': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/e1cb47967b3e20a4b5e40fd067f7bf5f9c96fb6d', u'sha1Sum': 'e1cb47967b3e20a4b5e40fd067f7bf5f9c96fb6d'}, u'bin/template/6.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/36d139b841d6ea5e06b0fc1eca8d41287a881f47', u'sha1Sum': '36d139b841d6ea5e06b0fc1eca8d41287a881f47'}, u'bin/penetempold/,IGCAR CS 15NB 03,04 X_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/c15c3bed35e3d6df32901859d2d248a40437cf33', u'sha1Sum': 'c15c3bed35e3d6df32901859d2d248a40437cf33'}, u'bin/penetempold/MTD CWP-2 A-B_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/93518afda6d796988348b712da1e5329cce2e8fb', u'sha1Sum': '93518afda6d796988348b712da1e5329cce2e8fb'}, u'bin/template/ro.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/a2be06fe66c56aaeb413ea70e31cf8fb9eac2485', u'sha1Sum': 'a2be06fe66c56aaeb413ea70e31cf8fb9eac2485'}, u'bin/penetempold/P8QADR462-11_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/bd1e5e031b6d920d3689438ea5dc4c974bfa6418', u'sha1Sum': 'bd1e5e031b6d920d3689438ea5dc4c974bfa6418'}, u'bin/penetempold/,IGCAR SS 50NB 19 X_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/b8cda3bf5bbd942decf205dc2435e7ef3f886d56', u'sha1Sum': 'b8cda3bf5bbd942decf205dc2435e7ef3f886d56'}, u'bin/penetempold/MMG RSS WP1 A-B_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/e2e4073cbf5e9fab20766bc02c2b6f76be0585a2', u'sha1Sum': 'e2e4073cbf5e9fab20766bc02c2b6f76be0585a2'}, u'bin/penetempold/sample E_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/81d2e8891cb5aebeb96c36a0c14bd98333671489', u'sha1Sum': '81d2e8891cb5aebeb96c36a0c14bd98333671489'}, u'main.py': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/ef3d356e79c5047970b62da587518e41ab5bd0bb', u'sha1Sum': 'ef3d356e79c5047970b62da587518e41ab5bd0bb'}, u'bin/template/c.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/e67dc60bdd435bf7eb74f708cd71ebeb74b70f7e', u'sha1Sum': 'e67dc60bdd435bf7eb74f708cd71ebeb74b70f7e'}, u'bin/remtxtfunc.py': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/f8c7f10b61522ba8c8688225772f8db88761d40f', u'sha1Sum': 'f8c7f10b61522ba8c8688225772f8db88761d40f'}, u'bin/penetempold/ss 21807,21808_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/09d028f65d8be0ac836f98e9af508454500d2afe', u'sha1Sum': '09d028f65d8be0ac836f98e9af508454500d2afe'}, u'bin/penetempold/NCB UT 12  04_cr_cr_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/f3c7a1c6e9d968040f84b38ee2125b1b04662513', u'sha1Sum': 'f3c7a1c6e9d968040f84b38ee2125b1b04662513'}, u'bin/tmp1/output_labels.txt': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/5c9cf18676fd17814e8f16801d8f701bab08c68a', u'sha1Sum': '5c9cf18676fd17814e8f16801d8f701bab08c68a'}, u'bin/penetempold/P1 QADR257 1_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/f1f70d2ef7360722d2d049200a86d47b2207ee73', u'sha1Sum': 'f1f70d2ef7360722d2d049200a86d47b2207ee73'}, u'bin/template/s.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/caefed611b55e80370c49bbc72322a5128126bde', u'sha1Sum': 'caefed611b55e80370c49bbc72322a5128126bde'}, u'bin/penetempold/IGCAR 25 NB CS5,6SS17,18,-X._cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/853ccd6af42a171420d2a860eb8c1b60aa2d0c46', u'sha1Sum': '853ccd6af42a171420d2a860eb8c1b60aa2d0c46'}, u'bin/penetempold/QAD WJ 50NB Y_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/f30ff570e6c784dc1ec3e5bb229d31bef5c51d1c', u'sha1Sum': 'f30ff570e6c784dc1ec3e5bb229d31bef5c51d1c'}, u'bin/penetempold/IFSB CO35 R3 X_cr.jpg': {u'sourceUrl': u'https://storage.googleapis.com/staging.adrs-rest-api.appspot.com/031504cab05844e0a72396982c22185cdea63ca4', u'sha1Sum': '031504cab05844e0a72396982c22185cdea63ca4'}}]
+2020-01-05 17:14:09,690 DEBUG    root            Converted YAML to JSON: "{
+  "entrypoint": {
+    "shell": "gunicorn -b :$PORT main:app"
+  }, 
+  "runtime": "python37"
+}"
+2020-01-05 17:14:11,113 DEBUG    root            Operation [apps/adrs-rest-api/operations/c1a0868b-079e-4562-ab7a-237cffb67e41] not complete. Waiting to retry.
+2020-01-05 17:14:11,113 INFO     ___FILE_ONLY___ Updating service [default]...
+2020-01-05 17:14:12,449 DEBUG    root            Operation [apps/adrs-rest-api/operations/c1a0868b-079e-4562-ab7a-237cffb67e41] not complete. Waiting to retry.
+2020-01-05 17:14:18,181 DEBUG    root            Operation [apps/adrs-rest-api/operations/c1a0868b-079e-4562-ab7a-237cffb67e41] complete. Result: {
+    "metadata": {
+        "target": "apps/adrs-rest-api/services/default/versions/20200105t171405", 
+        "method": "google.appengine.v1.Versions.CreateVersion", 
+        "user": "vishalbalaji@gmail.com", 
+        "insertTime": "2020-01-05T11:44:10.836Z", 
+        "endTime": "2020-01-05T11:44:17.495Z", 
+        "@type": "type.googleapis.com/google.appengine.v1.OperationMetadataV1"
+    }, 
+    "done": true, 
+    "name": "apps/adrs-rest-api/operations/c1a0868b-079e-4562-ab7a-237cffb67e41", 
+    "error": {
+        "message": "Access Not Configured. Cloud Build has not been used in project adrs-rest-api before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=adrs-rest-api then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.", 
+        "code": 7
+    }
+}
+2020-01-05 17:14:18,332 DEBUG    root            (gcloud.app.deploy) Error Response: [7] Access Not Configured. Cloud Build has not been used in project adrs-rest-api before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=adrs-rest-api then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 798, in Run
+    resources = command_instance.Run(args)
+  File "/opt/google-cloud-sdk/lib/surface/app/deploy.py", line 110, in Run
+    default_strategy=flex_image_build_option_default))
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 642, in RunDeploy
+    ignore_file=args.ignore_file)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 432, in Deploy
+    extra_config_settings)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py", line 208, in DeployService
+    poller=done_poller)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/operations_util.py", line 314, in WaitForOperation
+    sleep_ms=retry_interval)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.py", line 264, in WaitFor
+    sleep_ms, _StatusUpdate)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.py", line 326, in PollUntilDone
+    sleep_ms=sleep_ms)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/core/util/retry.py", line 229, in RetryOnResult
+    if not should_retry(result, state):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.py", line 320, in _IsNotDone
+    return not poller.IsDone(operation)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/operations_util.py", line 183, in IsDone
+    encoding.MessageToPyValue(operation.error)))
+OperationError: Error Response: [7] Access Not Configured. Cloud Build has not been used in project adrs-rest-api before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=adrs-rest-api then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+2020-01-05 17:14:18,335 ERROR    root            (gcloud.app.deploy) Error Response: [7] Access Not Configured. Cloud Build has not been used in project adrs-rest-api before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview?project=adrs-rest-api then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.

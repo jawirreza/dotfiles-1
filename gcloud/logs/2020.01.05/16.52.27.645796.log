@@ -1,0 +1,91 @@
+2020-01-05 16:52:27,646 DEBUG    root            Loaded Command Group: [u'gcloud', u'app']
+2020-01-05 16:52:27,774 DEBUG    root            Loaded Command Group: [u'gcloud', u'app', u'deploy']
+2020-01-05 16:52:27,776 DEBUG    root            Running [gcloud.app.deploy] with arguments: []
+2020-01-05 16:52:27,800 DEBUG    root            Loading runtimes experiment config from [gs://runtime-builders/experiments.yaml]
+2020-01-05 16:52:27,818 INFO     root            Reading [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5757626dd0>]
+2020-01-05 16:52:28,406 DEBUG    root            
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 300, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5757626dd0>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-01-05 16:52:28,407 DEBUG    root            Experiment config file could not be read. Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5757626dd0>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/surface/app/deploy.py", line 126, in _ServerSideExperimentEnabled
+    runtimes_builder_root)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 524, in LoadFromURI
+    .format(uri, e))
+ExperimentsError: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5757626dd0>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-01-05 16:52:28,877 DEBUG    root            API endpoint: [https://appengine.googleapis.com/], API version: [v1]
+2020-01-05 16:52:30,668 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:52:30,670 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:22:30 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:52:34,706 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:52:34,709 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:22:34 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:52:41,483 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:52:41,486 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:22:41 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:52:52,243 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:52:52,246 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:22:52 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:53:11,559 DEBUG    root            (gcloud.app.deploy) INTERNAL: Internal error encountered.
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 798, in Run
+    resources = command_instance.Run(args)
+  File "/opt/google-cloud-sdk/lib/surface/app/deploy.py", line 110, in Run
+    default_strategy=flex_image_build_option_default))
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 595, in RunDeploy
+    app = _PossiblyCreateApp(api_client, project)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 738, in _PossiblyCreateApp
+    return api_client.GetApplication()
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py", line 75, in GetApplication
+    return self.client.apps.Get(request)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_client.py", line 1130, in Get
+    config, request, global_params=global_params)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 729, in _RunMethod
+    http, http_request, **opts)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/http_wrapper.py", line 346, in MakeRequest
+    check_response_func=check_response_func)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/http_wrapper.py", line 402, in _MakeRequestNoRetry
+    check_response_func(response)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis.py", line 273, in _CheckResponseForApiEnablement
+    http_wrapper.CheckResponse(response)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/http_wrapper.py", line 223, in CheckResponse
+    raise exceptions.BadStatusCodeError.FromResponse(response)
+BadStatusCodeError: HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:23:11 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:53:11,562 ERROR    root            (gcloud.app.deploy) INTERNAL: Internal error encountered.

@@ -1,0 +1,243 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;
+;==========================================================
+
+[color]
+
+fg = #1f1f1f
+bg = #FFFFFF
+fg-alt = #A9ABB0
+
+acolor = #FFFFFF
+curgent = #EF5350
+coccupied = #42A5F5
+
+shade1 = #FF6F00
+shade2 = #FF8F00
+shade3 = #FFA000
+shade4 = #FFB300
+shade5 = #FFC107
+shade6 = #FFCA28
+shade7 = #FFD54F
+shade8 = #FFE082
+ashade8 = #2C2C2C
+
+## Material Colors
+
+red = #e53935
+pink = #d81b60
+purple = #8e24aa
+deep-purple = #5e35b1
+indigo = #3949ab
+blue = #1e88e5
+light-blue = #039be5
+cyan = #00acc1
+teal = #00897b
+green = #43a047
+light-green = #7cb342
+lime = #c0ca33
+yellow = #fdd835
+amber = #ffb300
+orange = #fb8c00
+deep-orange = #f4511e
+brown = #6d4c41
+grey = #757575
+blue-gray = #546e7a
+
+;==========================================================
+
+
+[bar/main]
+width = 100%
+height = 28
+offset-x = 0%
+offset-y = 0%
+bottom = false
+fixed-center = true
+line-size = 2
+
+padding-left = 2
+padding-right = 2
+
+border-top-size = 10
+border-color = ${color.fg}
+
+background = ${color.fg}
+foreground = ${color.bg}
+
+;==========================================================
+
+font-0 = "Monospace:pixelsize=9;3"
+font-1 = "Iosevka Nerd Font:pixelsize=17.5;4"
+
+;==========================================================
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+;== Module Location ========================================================
+
+modules-left = left-corner window right-corner
+modules-center = left-corner workspaces right-padding right-corner
+modules-right = left-corner i3-mode right-padding-2 volume right-padding-2 battery right-padding-2 network right-padding-2 date right-corner
+
+;== Modules ========================================================
+
+
+[module/right-padding]
+type = custom/text
+content = " "
+content-background = ${color.bg}
+
+
+[module/right-padding-2]
+type = custom/text
+content = "  "
+content-background = ${color.bg}
+
+[module/left-corner]
+type = custom/text
+content-background = ${color.fg}
+content-foreground = ${color.bg}
+content = ""
+
+
+[module/right-corner]
+type = custom/text
+content-background = ${color.fg}
+content-foreground = ${color.bg}
+content = ""
+
+
+[module/i3-mode]
+exec=echo default && i3-msg -t subscribe -m '[ "mode" ]' | jq -r --unbuffered '.change'
+format=<label>
+format-background=${color.bg}
+format-foreground=${color.fg}
+label=%output%
+tail=true
+type=custom/script
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+
+format = <label-state>
+format-background = ${color.bg}
+
+label-empty-foreground = ${color.fg-alt}
+label-active-foreground = ${color.fg}
+
+
+[module/battery]
+type = internal/battery
+full-at = 99
+time-format = %H:%M
+battery = BAT1
+adapter = AC
+format-charging = <animation-charging> <label-charging>
+format-charging-background = ${color.bg}
+format-charging-foreground = ${color.fg}
+format-charging-padding = 0
+label-charging = %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${color.bg}
+label-discharging-foreground = ${color.fg}
+format-discharging-padding = 0
+label-discharging = %percentage%%
+format-full = <label-full>
+format-full-background = ${color.bg}
+format-full-foreground = ${color.fg}
+
+format-full-prefix = " "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+ramp-capacity-0-foreground = ${color.red}
+ramp-capacity-1-foreground = ${color.red}
+ramp-capacity-foreground   = ${color.fg}
+bar-capacity-width = 10
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+
+animation-charging-framerate = 750
+
+
+[module/volume]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${color.bg}
+format-volume-foreground = ${color.fg}
+label-volume = %percentage%%
+label-muted = "婢"
+label-muted-background = ${color.bg}
+label-muted-foreground = ${color.fg}
+
+ramp-volume-0 = 奄
+ramp-volume-1 = 奄
+ramp-volume-2 = 奔
+ramp-volume-3 = 奔
+ramp-volume-4 = 墳
+ramp-volume-5 = 墳
+ramp-volume-6 = 墳
+
+mapped = true
+
+
+[module/network]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-network
+format-background = ${color.bg}
+format-foreground = ${color.fg}
+label-foreground = ${color.fg}
+format-padding = 0
+tail = true
+
+[module/date]
+type = internal/date
+interval = 30
+label =  %time%
+label-background = ${color.bg}
+label-foreground = ${color.fg}
+time =  %I:%M %p
+time-alt =  %d-%m-%Y
+
+
+[module/window]
+type = internal/xwindow
+format-foreground=${color.fg}
+format-background=${color.bg}
+label-maxlen = 75
+; label-padding=2
+
+;== EOF ========================================================
+

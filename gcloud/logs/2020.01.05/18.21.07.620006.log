@@ -1,0 +1,75 @@
+2020-01-05 18:21:07,620 DEBUG    root            Loaded Command Group: [u'gcloud', u'app']
+2020-01-05 18:21:07,719 DEBUG    root            Loaded Command Group: [u'gcloud', u'app', u'deploy']
+2020-01-05 18:21:07,721 DEBUG    root            Running [gcloud.app.deploy] with arguments: []
+2020-01-05 18:21:07,747 DEBUG    root            Loading runtimes experiment config from [gs://runtime-builders/experiments.yaml]
+2020-01-05 18:21:07,769 INFO     root            Reading [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5da41ffe50>]
+2020-01-05 18:21:08,332 DEBUG    root            
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 300, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5da41ffe50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-01-05 18:21:08,334 DEBUG    root            Experiment config file could not be read. Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5da41ffe50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/surface/app/deploy.py", line 126, in _ServerSideExperimentEnabled
+    runtimes_builder_root)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 524, in LoadFromURI
+    .format(uri, e))
+ExperimentsError: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7f5da41ffe50>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-01-05 18:21:08,608 DEBUG    root            API endpoint: [https://appengine.googleapis.com/], API version: [v1]
+2020-01-05 18:21:10,789 INFO     ___FILE_ONLY___ Services to deploy:
+
+
+2020-01-05 18:21:10,790 INFO     ___FILE_ONLY___ descriptor:      [/run/media/vishal/DATA/projects/adrs/adrs-rest/app.yaml]
+source:          [/run/media/vishal/DATA/projects/adrs/adrs-rest]
+target project:  [adrs-rest-api]
+target service:  [default]
+target version:  [20200105t182110]
+target url:      [https://adrs-rest-api.appspot.com]
+
+
+
+2020-01-05 18:21:12,150 DEBUG    root            No bucket specified, retrieving default bucket.
+2020-01-05 18:21:12,155 DEBUG    root            Using bucket [gs://staging.adrs-rest-api.appspot.com].
+2020-01-05 18:21:13,974 DEBUG    root            Service [appengineflex.googleapis.com] is already enabled for project [adrs-rest-api]
+2020-01-05 18:21:14,681 INFO     ___FILE_ONLY___ Beginning deployment of service [default]...
+
+2020-01-05 18:21:14,689 INFO     root            Using ignore file at [/run/media/vishal/DATA/projects/adrs/adrs-rest/.gcloudignore].
+2020-01-05 18:21:14,692 DEBUG    root            Skipping file [.gcloudignore]
+2020-01-05 18:21:14,695 DEBUG    root            Skipping file [__pycache__]
+2020-01-05 18:21:14,703 DEBUG    root            Skipping file [bin/__pycache__]
+2020-01-05 18:21:14,726 INFO     root            Need Dockerfile to be generated for runtime python36
+2020-01-05 18:21:14,726 INFO     ___FILE_ONLY___ Building and pushing image for service [default]
+
+2020-01-05 18:21:14,734 DEBUG    root            Could not call git with args ('config', '--get-regexp', 'remote\\.(.*)\\.url'): Command '['git', 'config', '--get-regexp', 'remote\\.(.*)\\.url']' returned non-zero exit status 1
+2020-01-05 18:21:14,735 INFO     root            Could not generate [source-context.json]: Could not list remote URLs from source directory: /run/media/vishal/DATA/projects/adrs/adrs-rest
+Stackdriver Debugger may not be configured or enabled on this application. See https://cloud.google.com/debugger/ for more information.
+2020-01-05 18:21:14,735 INFO     root            Not checking for [Custom] because runtime is [python36]
+2020-01-05 18:21:14,735 INFO     root            Not checking for [Go] because runtime is [python36]
+2020-01-05 18:21:14,735 INFO     root            Not checking for [Ruby] because runtime is [python36]
+2020-01-05 18:21:14,735 INFO     root            Not checking for [Node.js] because runtime is [python36]
+2020-01-05 18:21:14,735 INFO     root            Not checking for [Java] because runtime is [python36]
+2020-01-05 18:21:14,736 INFO     root            Not checking for [Python Compat] because runtime is [python36]
+2020-01-05 18:21:14,736 INFO     root            Not checking for [Python] because runtime is [python36]
+2020-01-05 18:21:14,736 INFO     root            Not checking for [PHP] because runtime is [python36]
+2020-01-05 18:21:14,736 DEBUG    root            (gcloud.app.deploy) Your application does not satisfy all of the requirements for a runtime of type [python36].  Please correct the errors and try again.
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 798, in Run
+    resources = command_instance.Run(args)
+  File "/opt/google-cloud-sdk/lib/surface/app/deploy.py", line 110, in Run
+    default_strategy=flex_image_build_option_default))
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 642, in RunDeploy
+    ignore_file=args.ignore_file)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 415, in Deploy
+    image, code_bucket_ref, gcr_domain, flex_image_build_option)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 288, in _PossiblyBuildAndPush
+    self.deploy_options.parallel_build)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/deploy_command_util.py", line 413, in BuildAndPushDockerImage
+    gen_files.update(_GetDockerfiles(service, upload_dir))
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/deploy_command_util.py", line 279, in _GetDockerfiles
+    'again.'.format(info.runtime))
+UnsatisfiedRequirementsError: Your application does not satisfy all of the requirements for a runtime of type [python36].  Please correct the errors and try again.
+2020-01-05 18:21:14,737 ERROR    root            (gcloud.app.deploy) Your application does not satisfy all of the requirements for a runtime of type [python36].  Please correct the errors and try again.

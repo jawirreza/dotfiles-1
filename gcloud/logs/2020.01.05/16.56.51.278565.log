@@ -1,0 +1,111 @@
+2020-01-05 16:56:51,285 DEBUG    root            Loaded Command Group: [u'gcloud', u'init']
+2020-01-05 16:56:51,286 DEBUG    root            Running [gcloud.init] with arguments: []
+2020-01-05 16:56:51,286 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2020-01-05 16:56:51,287 INFO     ___FILE_ONLY___ Settings from your current configuration [default] are:
+
+2020-01-05 16:56:51,289 INFO     ___FILE_ONLY___ core:
+  account: vishalbalaji@gmail.com
+  disable_usage_reporting: 'True'
+
+2020-01-05 16:56:51,289 INFO     ___FILE_ONLY___ 
+
+2020-01-05 16:56:52,826 INFO     ___FILE_ONLY___ Your current configuration has been set to: [default]
+
+
+2020-01-05 16:56:52,827 INFO     ___FILE_ONLY___ You can skip diagnostics next time by using the following flag:
+
+2020-01-05 16:56:52,827 INFO     ___FILE_ONLY___   gcloud init --skip-diagnostics
+
+
+2020-01-05 16:56:52,828 INFO     ___FILE_ONLY___ Network diagnostic detects and fixes local network connection issues.
+
+2020-01-05 16:56:52,830 INFO     ___FILE_ONLY___ Checking network connection...
+2020-01-05 16:56:55,236 INFO     ___FILE_ONLY___ Reachability Check passed.
+
+2020-01-05 16:56:55,237 INFO     ___FILE_ONLY___ Network diagnostic passed (1/1 checks passed).
+
+
+2020-01-05 16:56:56,069 INFO     ___FILE_ONLY___ You are logged in as: [vishalbalaji@gmail.com].
+
+
+2020-01-05 16:57:05,131 INFO     ___FILE_ONLY___ Waiting for [operations/cp.6235525881640422778] to finish...
+2020-01-05 16:57:12,568 INFO     ___FILE_ONLY___ Your current project has been set to: [adrs-rest-api].
+
+
+2020-01-05 16:57:12,728 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute']
+2020-01-05 16:57:12,730 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'project_info']
+2020-01-05 16:57:12,746 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'project-info', u'describe']
+2020-01-05 16:57:12,746 INFO     root            Executing: [gcloud compute project-info describe --quiet]
+2020-01-05 16:57:12,748 DEBUG    root            Running [gcloud.compute.project-info.describe] with arguments: [--no-user-output-enabled: "false", --quiet: "True", --verbosity: "none"]
+2020-01-05 16:57:33,900 DEBUG    root            (gcloud.compute.project-info.describe) Could not fetch resource:
+ - Project 962623875981 is not found and cannot be used for API calls. If it is recently created, enable Compute Engine API by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=962623875981 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 798, in Run
+    resources = command_instance.Run(args)
+  File "/opt/google-cloud-sdk/lib/surface/compute/project_info/describe.py", line 39, in Run
+    project=project_ref.projectId))])[0]
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 97, in MakeRequests
+    errors, error_message='Could not fetch resource:')
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 119, in RaiseToolException
+    RaiseException(problems, calliope_exceptions.ToolException, error_message)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 131, in RaiseException
+    errors))
+ToolException: Could not fetch resource:
+ - Project 962623875981 is not found and cannot be used for API calls. If it is recently created, enable Compute Engine API by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=962623875981 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+
+2020-01-05 16:57:33,902 ERROR    root            (gcloud.compute.project-info.describe) Could not fetch resource:
+ - Project 962623875981 is not found and cannot be used for API calls. If it is recently created, enable Compute Engine API by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=962623875981 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+
+2020-01-05 16:57:33,902 INFO     root            [compute project-info describe --quiet] has failed
+
+2020-01-05 16:57:33,903 INFO     ___FILE_ONLY___ Not setting default zone/region (this feature makes it easier to use
+[gcloud compute] by setting an appropriate default value for the
+--zone and --region flag).
+See https://cloud.google.com/compute/docs/gcloud-compute section on how to set
+default compute region and zone manually. If you would like [gcloud init] to be
+able to do this for you the next time you run it, make sure the
+Compute Engine API is enabled for your project on the
+https://console.developers.google.com/apis page.
+
+
+2020-01-05 16:57:33,903 DEBUG    root            Executing command: [u'/opt/google-cloud-sdk/bin/gsutil', u'config', u'-n', u'-o', u'/home/vishal/.boto']
+2020-01-05 16:57:36,169 DEBUG    ___FILE_ONLY___ 
+2020-01-05 16:57:36,169 DEBUG    ___FILE_ONLY___ This command will create a boto config file at /home/vishal/.boto
+containing your credentials, based on your responses to the following
+questions.
+
+Boto config file "/home/vishal/.boto" created. If you need to use a
+proxy to access the Internet please see the instructions in that file.
+
+2020-01-05 16:57:36,169 INFO     ___FILE_ONLY___ Created a default .boto configuration file at [/home/vishal/.boto]. See this file and
+[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage.
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ Your Google Cloud SDK is configured and ready to use!
+
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ * Commands that require authentication will use vishalbalaji@gmail.com by default
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ * Commands will reference project `adrs-rest-api` by default
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ Run `gcloud help config` to learn how to change individual settings
+
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ Run `gcloud topic configurations` to learn more.
+
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ Some things to try next:
+
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ * Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+
+2020-01-05 16:57:36,170 INFO     ___FILE_ONLY___ * Run `gcloud topic --help` to learn about advanced features of the SDK like arg files and output formatting
+
+2020-01-05 16:57:36,171 INFO     root            Display format: "default"
+2020-01-05 16:57:36,172 DEBUG    root            SDK update checks are disabled.

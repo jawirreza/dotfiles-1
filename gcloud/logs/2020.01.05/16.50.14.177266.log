@@ -1,0 +1,32 @@
+2020-01-05 16:50:14,178 DEBUG    root            Loaded Command Group: [u'gcloud', u'app']
+2020-01-05 16:50:14,283 DEBUG    root            Loaded Command Group: [u'gcloud', u'app', u'create']
+2020-01-05 16:50:14,286 DEBUG    root            Running [gcloud.app.create] with arguments: []
+2020-01-05 16:50:14,327 DEBUG    root            (gcloud.app.create) The required property [project] is not currently set.
+You may set it for your current workspace by running:
+
+  $ gcloud config set project VALUE
+
+or it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 798, in Run
+    resources = command_instance.Run(args)
+  File "/opt/google-cloud-sdk/lib/surface/app/create.py", line 58, in Run
+    project = properties.VALUES.core.project.Get(required=True)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/core/properties.py", line 2039, in Get
+    required)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/core/properties.py", line 2348, in _GetProperty
+    raise RequiredPropertyError(prop, flag=flag_to_use)
+RequiredPropertyError: The required property [project] is not currently set.
+You may set it for your current workspace by running:
+
+  $ gcloud config set project VALUE
+
+or it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]
+2020-01-05 16:50:14,328 ERROR    root            (gcloud.app.create) The required property [project] is not currently set.
+You may set it for your current workspace by running:
+
+  $ gcloud config set project VALUE
+
+or it can be set temporarily by the environment variable [CLOUDSDK_CORE_PROJECT]

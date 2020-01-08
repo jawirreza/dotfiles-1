@@ -1,0 +1,7 @@
+2020-01-05 16:50:44,891 DEBUG    root            Loaded Command Group: [u'gcloud', u'config']
+2020-01-05 16:50:44,895 DEBUG    root            Loaded Command Group: [u'gcloud', u'config', u'set']
+2020-01-05 16:50:44,896 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "project", VALUE: "adrs-api"]
+2020-01-05 16:50:44,897 INFO     ___FILE_ONLY___ Updated property [core/project].
+
+2020-01-05 16:50:44,898 INFO     root            Display format: "default"
+2020-01-05 16:50:44,902 DEBUG    root            SDK update checks are disabled.

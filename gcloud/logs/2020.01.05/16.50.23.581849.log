@@ -1,0 +1,6 @@
+2020-01-05 16:50:23,582 DEBUG    root            Loaded Command Group: [u'gcloud', u'app']
+2020-01-05 16:50:23,615 DEBUG    root            Loaded Command Group: [u'gcloud', u'app', u'create']
+2020-01-05 16:50:23,616 ERROR    root            (gcloud.app.create) unrecognized arguments: adrs-api 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

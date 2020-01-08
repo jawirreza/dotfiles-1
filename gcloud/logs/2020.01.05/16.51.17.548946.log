@@ -1,0 +1,72 @@
+2020-01-05 16:51:17,549 DEBUG    root            Loaded Command Group: [u'gcloud', u'app']
+2020-01-05 16:51:17,584 DEBUG    root            Loaded Command Group: [u'gcloud', u'app', u'create']
+2020-01-05 16:51:17,585 DEBUG    root            Running [gcloud.app.create] with arguments: []
+2020-01-05 16:51:19,491 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:51:19,494 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:21:19 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:51:22,851 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:51:22,853 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:21:22 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:51:29,033 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:51:29,034 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:21:28 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:51:37,431 DEBUG    root            Response returned status 500, retrying
+2020-01-05 16:51:37,433 DEBUG    root            Retrying request to url https://appengine.googleapis.com/v1/apps/adrs-api?alt=json after exception HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:21:37 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:51:53,097 DEBUG    root            (gcloud.app.create) INTERNAL: Internal error encountered.
+Traceback (most recent call last):
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 984, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 798, in Run
+    resources = command_instance.Run(args)
+  File "/opt/google-cloud-sdk/lib/surface/app/create.py", line 63, in Run
+    create_util.CheckAppNotExists(api_client, project)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/create_util.py", line 54, in CheckAppNotExists
+    app = api_client.GetApplication()  # Should raise NotFoundError
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py", line 75, in GetApplication
+    return self.client.apps.Get(request)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_client.py", line 1130, in Get
+    config, request, global_params=global_params)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 729, in _RunMethod
+    http, http_request, **opts)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/http_wrapper.py", line 346, in MakeRequest
+    check_response_func=check_response_func)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/http_wrapper.py", line 402, in _MakeRequestNoRetry
+    check_response_func(response)
+  File "/opt/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis.py", line 273, in _CheckResponseForApiEnablement
+    http_wrapper.CheckResponse(response)
+  File "/opt/google-cloud-sdk/lib/third_party/apitools/base/py/http_wrapper.py", line 223, in CheckResponse
+    raise exceptions.BadStatusCodeError.FromResponse(response)
+BadStatusCodeError: HttpError accessing <https://appengine.googleapis.com/v1/apps/adrs-api?alt=json>: response: <{'status': '500', 'content-length': '109', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Sun, 05 Jan 2020 11:21:52 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+>
+2020-01-05 16:51:53,100 ERROR    root            (gcloud.app.create) INTERNAL: Internal error encountered.
